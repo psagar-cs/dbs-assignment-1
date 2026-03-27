@@ -1,0 +1,179 @@
+/* === Base === */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #f7f3ef;
+  color: #2c2c2c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  padding: 3rem 2rem 2rem 2rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* === Rules === */
+
+.rule {
+  border: none;
+  border-top: 1px solid #d4cfc9;
+  margin: 2.5rem 0;
+}
+
+/* === Vertical decorative text === */
+
+.vertical-text {
+  position: fixed;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  color: #d4cfc9;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* === Header === */
+
+.header {
+  padding-left: 0.25rem;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+}
+
+/* === Hero === */
+
+.hero {
+  margin-top: 1rem;
+}
+
+.headline {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  margin-left: -0.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.tagline {
+  max-width: 460px;
+  color: #6b6560;
+  margin-bottom: 2.5rem;
+}
+
+/* === Search === */
+
+.search-wrapper {
+  max-width: 420px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0.6rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #d4cfc9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: #2c2c2c;
+  outline: none;
+  cursor: default;
+}
+
+.search-bar::placeholder {
+  color: #b0a99f;
+  font-style: italic;
+}
+
+/* === Recommendations === */
+
+.recommendations {
+  padding-left: 0.25rem;
+}
+
+.recs-label {
+  font-style: italic;
+  color: #6b6560;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.rec-item {
+  padding: 1.2rem 0;
+}
+
+.rec-title {
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
+}
+
+.rec-meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b85c38;
+  margin-bottom: 0.6rem;
+}
+
+.rec-note {
+  color: #6b6560;
+  max-width: 440px;
+  font-size: 0.82rem;
+}
+
+/* === Footer === */
+
+.footer {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #b0a99f;
+  letter-spacing: 0.1em;
+  padding-bottom: 1rem;
+}
+
+/* === Responsive === */
+
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1.25rem 1.5rem 1.25rem;
+  }
+
+  .vertical-text {
+    display: none;
+  }
+
+  .headline {
+    font-size: 1.3rem;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+
+  .rec-note {
+    max-width: 100%;
+  }
+}

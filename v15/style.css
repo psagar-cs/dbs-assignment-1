@@ -1,0 +1,236 @@
+/* === RESET & BASE === */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #00ff41;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* === SCANLINE EFFECT === */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* === CRT GLOW === */
+body * {
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+/* === STATUS BAR === */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    border-bottom: 1px solid #00ff41;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* === MAIN CONTENT === */
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+/* === HERO === */
+.hero {
+    margin-bottom: 48px;
+}
+
+.typed {
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Blinking cursor */
+.typed::after {
+    content: '';
+    display: inline-block;
+    width: 0.6em;
+    height: 1.1em;
+    background-color: #00ff41;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.tagline {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.tagline-sub {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    max-width: 500px;
+}
+
+/* === COMMAND PROMPT === */
+.prompt {
+    margin-bottom: 48px;
+}
+
+.command-line {
+    display: flex;
+    align-items: center;
+    border: 1px solid #00ff41;
+    padding: 12px 16px;
+    background: rgba(0, 255, 65, 0.03);
+    position: relative;
+}
+
+.prefix {
+    font-size: 1.1rem;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.command-line input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #00ff41;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    width: 100%;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+.command-line input::placeholder {
+    color: rgba(0, 255, 65, 0.35);
+}
+
+.cursor-blink {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: #00ff41;
+    animation: blink 1s step-end infinite;
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+/* === RESULTS === */
+.results-header {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.card {
+    margin-bottom: 24px;
+}
+
+.card pre {
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+.card code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: #00ff41;
+    white-space: pre;
+}
+
+/* === FOOTER === */
+footer {
+    border-top: 1px solid rgba(0, 255, 65, 0.3);
+    padding: 24px;
+    text-align: center;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+    .status-bar {
+        justify-content: center;
+        text-align: center;
+        font-size: 0.7rem;
+        padding: 10px 16px;
+    }
+
+    .typed {
+        font-size: 1.6rem;
+    }
+
+    .tagline-sub {
+        font-size: 0.75rem;
+    }
+
+    main {
+        padding: 32px 16px;
+    }
+
+    .card code {
+        font-size: 0.65rem;
+    }
+
+    .command-line {
+        padding: 10px 12px;
+    }
+
+    .command-line input {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .typed {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .card code {
+        font-size: 0.55rem;
+    }
+
+    .status-bar span {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}

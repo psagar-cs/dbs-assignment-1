@@ -1,0 +1,225 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Base ── */
+:root {
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-text: #2c2c2c;
+  --color-muted: #7a7a7a;
+  --color-accent: #6b9e8a;
+  --color-accent-light: #e8f2ed;
+  --color-border: #e8e8e8;
+  --font-stack: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  --radius: 12px;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-stack);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header ── */
+header {
+  padding: 32px 0;
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-accent);
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.tagline {
+  color: var(--color-muted);
+  font-size: 1.1rem;
+  max-width: 540px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* ── Search bar ── */
+.search-bar {
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.search-bar:hover {
+  border-color: var(--color-accent);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-family: var(--font-stack);
+  color: var(--color-text);
+  background: transparent;
+}
+
+.search-bar input::placeholder {
+  color: var(--color-muted);
+}
+
+.search-bar button {
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-stack);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background: #5a8b78;
+}
+
+/* ── Recommendations ── */
+.recommendations {
+  padding: 20px 0 80px;
+}
+
+.results-label {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.results-label strong {
+  color: var(--color-text);
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.card-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.card-author {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: auto;
+  padding: 32px 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .hero {
+    padding: 48px 0 40px;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar button {
+    padding: 14px;
+  }
+}

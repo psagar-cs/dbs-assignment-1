@@ -1,0 +1,352 @@
+/* ========================================
+   TASTEWISE — HAND-DRAWN INDIE ZINE STYLE
+   ======================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f5f0e1;
+    color: #1a1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Subtle noise texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.04;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px
+        );
+}
+
+/* ---- HEADER ---- */
+
+header {
+    text-align: center;
+    padding: 3rem 1.5rem 2rem;
+    border-bottom: 2px dashed #1a1a1a;
+}
+
+.logo {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+}
+
+.logo-sub {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-top: 0.25rem;
+    color: #666;
+}
+
+/* ---- HERO ---- */
+
+.hero {
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.hero h1:last-of-type {
+    color: #c0392b;
+}
+
+.tagline {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    color: #555;
+    letter-spacing: 0.05em;
+}
+
+/* ---- SEARCH BAR ---- */
+
+.search-wrapper {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 480px;
+    padding: 0.9rem 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    background: transparent;
+    border: 2px dashed #1a1a1a;
+    color: #1a1a1a;
+    outline: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.search-bar::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.search-note {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: #c0392b;
+}
+
+/* ---- RECOMMENDATIONS ---- */
+
+.recommendations {
+    padding: 3rem 1.5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.recommendations h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.rec-intro {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+/* ---- CARDS ---- */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background: #faf6eb;
+    border: 2px dashed #1a1a1a;
+    padding: 2rem 1.8rem;
+    width: 260px;
+    text-align: left;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: rotate(0deg) !important;
+    box-shadow: 4px 4px 0 #1a1a1a;
+}
+
+.card-1 {
+    transform: rotate(-2deg);
+}
+
+.card-2 {
+    transform: rotate(1.5deg);
+}
+
+.card-3 {
+    transform: rotate(-1deg);
+}
+
+.card-category {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: #c0392b;
+    color: #f5f0e1;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.card-creator {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.card-note {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    border-top: 1px dashed #ccc;
+    padding-top: 0.75rem;
+}
+
+/* ---- ABOUT / HOW IT WORKS ---- */
+
+.about {
+    padding: 3rem 1.5rem 3.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-top: 2px dashed #1a1a1a;
+}
+
+.about h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.steps p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    line-height: 1.7;
+}
+
+.step-num {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #c0392b;
+    margin-right: 0.4rem;
+}
+
+/* ---- FOOTER ---- */
+
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+    margin-top: 1rem;
+}
+
+.cut-line {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #999;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.footer-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #1a1a1a;
+}
+
+.footer-copy {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.3rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* ---- RESPONSIVE ---- */
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        font-size: 2.8rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .card-1,
+    .card-2,
+    .card-3 {
+        transform: rotate(0deg);
+    }
+
+    .recommendations h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .search-bar {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .card {
+        padding: 1.5rem 1.3rem;
+    }
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tastewise — Design Journey</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #f5f5f4;
+      --color-surface: #ffffff;
+      --color-text: #2c2c2c;
+      --color-muted: #7a7a7a;
+      --color-border: #e5e5e3;
+      --font-stack: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-stack);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 64px 24px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      color: var(--color-muted);
+      font-size: 1.05rem;
+      margin-bottom: 48px;
+      max-width: 480px;
+    }
+
+    .timeline {
+      list-style: none;
+      border-left: 2px solid var(--color-border);
+      padding-left: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .timeline li {
+      position: relative;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -39px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-border);
+      border: 2px solid var(--color-bg);
+    }
+
+    .version-link {
+      display: block;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .version-link:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .version-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .version-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .version-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-muted);
+    }
+
+    .version-desc {
+      color: var(--color-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .reflection {
+      margin-top: 48px;
+      padding: 24px 24px 24px 20px;
+      border-left: 3px solid #b8b5ad;
+      background: #efeee9;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    .reflection-label {
+      display: block;
+      font-style: normal;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9a9790;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      margin-top: 64px;
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Tastewise</h1>
+    <p class="intro">The design journey of a cross-domain recommendation app — each version explores a different direction.</p>
+
+    <ol class="timeline">
+      <li>
+        <a href="v1/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 1</span>
+            <span class="version-tag">Clean &amp; Minimal</span>
+          </div>
+          <p class="version-desc">A calm, light design inspired by wellness and productivity apps. Lots of whitespace, a muted sage-green accent, and simple recommendation cards.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v2/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 2</span>
+            <span class="version-tag">Dark &amp; Editorial</span>
+          </div>
+          <p class="version-desc">A high-contrast, magazine-inspired dark design. Bold serif typography, sharp lines, a red accent, and numbered editorial-style cards.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v3/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 3</span>
+            <span class="version-tag">Brutalist Manifesto</span>
+          </div>
+          <p class="version-desc">Raw, aggressive, intentionally ugly-beautiful. Monospaced type, thick borders, black and yellow, color-inversion hover states.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v4/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 4</span>
+            <span class="version-tag">Retro 90s Web</span>
+          </div>
+          <p class="version-desc">GeoCities nostalgia — Comic Sans, beveled borders, clashing colors, a scrolling marquee, visitor counter, and "Under Construction" energy.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v5/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 5</span>
+            <span class="version-tag">Luxury Fashion</span>
+          </div>
+          <p class="version-desc">Whisper-quiet elegance inspired by Celine and Aesop. Thin serif type, hairline rules, cream palette, and massive negative space.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v6/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 6</span>
+            <span class="version-tag">Playful Kids App</span>
+          </div>
+          <p class="version-desc">Bright, bubbly, Duolingo-inspired. Chunky fonts, rotated cards, thick colored borders, bold shadows, and pure joy.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v7/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 7</span>
+            <span class="version-tag">Corporate SaaS</span>
+          </div>
+          <p class="version-desc">Enterprise polish — blue-purple gradient hero, nav bar with CTAs, trust badges, and a clean professional grid layout.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v8/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 8</span>
+            <span class="version-tag">Japanese Minimalism</span>
+          </div>
+          <p class="version-desc">Wabi-sabi restraint — warm off-white, delicate typography, asymmetric layout, thin rules, and a vertical Japanese text accent.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v9/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 9</span>
+            <span class="version-tag">Neon Cyberpunk</span>
+          </div>
+          <p class="version-desc">Blade Runner meets synthwave. Deep purple-black, neon glow effects in pink/cyan/green, scanlines, and glowing card borders.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v10/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 10</span>
+            <span class="version-tag">Indie Zine</span>
+          </div>
+          <p class="version-desc">Photocopied DIY aesthetic — handwriting font, dashed borders, tilted cards, red stamp accents, and scissors-cut-here footer.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v11/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 11</span>
+            <span class="version-tag">Travel Magazine</span>
+          </div>
+          <p class="version-desc">Cond&eacute; Nast warmth — cream and gold palette, serif masthead, editorial magazine grid, and premium print typography.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v12/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 12</span>
+            <span class="version-tag">Vaporwave</span>
+          </div>
+          <p class="version-desc">Dreamy retrowave — pink-to-purple gradients, perspective grid lines, pastel neon palette, and 80s mall surrealism.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v13/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 13</span>
+            <span class="version-tag">Newspaper Broadsheet</span>
+          </div>
+          <p class="version-desc">Classic front page — all-serif, strict black and white, multi-column grid, justified text, and a classified-ad search box.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v14/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 14</span>
+            <span class="version-tag">Botanical / Nature</span>
+          </div>
+          <p class="version-desc">Earthy field guide aesthetic — forest green and terracotta on cream, serif type, and decorative botanical corner ornaments.</p>
+        </a>
+      </li>
+      <li>
+        <a href="v15/index.html" class="version-link">
+          <div class="version-header">
+            <span class="version-name">Version 15</span>
+            <span class="version-tag">Sci-Fi Terminal</span>
+          </div>
+          <p class="version-desc">1980s mainframe — black screen, green monospace text, scanlines, blinking cursor, ASCII box-drawing borders, and CRT glow.</p>
+        </a>
+      </li>
+    </ol>
+
+    <blockquote class="reflection">
+      <span class="reflection-label">Designer's note</span>
+      After exploring 15 radically different directions, I noticed I was drawn to designs that felt serious and considered — editorial, authoritative, a little like a culture magazine or broadsheet. The playful versions felt too flippant for an app about taste. Going forward I want to explore layouts that break the standard input-on-top, three-cards-below structure, and designs that give more context about why a recommendation is being made — not just what it is.
+    </blockquote>
+
+    <footer>
+      <p>MPCS 51238 — Design, Build, Ship</p>
+    </footer>
+  </div>
+
+</body>
+</html>
