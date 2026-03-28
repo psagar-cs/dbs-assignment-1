@@ -1,0 +1,248 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #faf7f3;
+}
+
+/* ===== Split Layout ===== */
+.split-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== Left Panel (Fixed) ===== */
+.left-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    background-color: #1c1c1c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 48px;
+    z-index: 10;
+}
+
+.left-panel-content {
+    max-width: 380px;
+    width: 100%;
+}
+
+.logo {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.tagline {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #a0a0a0;
+    margin-bottom: 48px;
+    font-style: italic;
+}
+
+/* Search Bar (Disabled/Display Only) */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    cursor: default;
+    user-select: none;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+    color: #666;
+    flex-shrink: 0;
+}
+
+.search-text {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    color: #e8e8e8;
+    letter-spacing: 0.01em;
+}
+
+.search-hint {
+    font-size: 0.8rem;
+    color: #666;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.left-footer {
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    right: 48px;
+}
+
+.footer-text {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+/* ===== Right Panel (Scrollable) ===== */
+.right-panel {
+    margin-left: 40%;
+    width: 60%;
+    min-height: 100vh;
+    padding: 80px 72px 60px;
+    background-color: #faf7f3;
+}
+
+.results-header {
+    margin-bottom: 72px;
+}
+
+.results-intro {
+    font-size: 1.15rem;
+    color: #888;
+    letter-spacing: 0.02em;
+}
+
+.results-intro strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* ===== Recommendation Sections ===== */
+.recommendation {
+    padding: 20px 0 80px;
+}
+
+.category-label {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #8b3a3a;
+    margin-bottom: 20px;
+}
+
+.rec-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #1c1c1c;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.rec-artist {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #999;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.rec-explanation {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #777;
+    font-style: italic;
+    max-width: 540px;
+}
+
+/* Section Divider */
+.section-rule {
+    border: none;
+    border-top: 1px solid #ddd5cb;
+    margin: 0;
+}
+
+/* ===== Right Footer ===== */
+.right-footer {
+    padding-top: 60px;
+    margin-top: 20px;
+}
+
+.right-footer p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #bbb;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* ===== Responsive: Under 768px ===== */
+@media (max-width: 768px) {
+    .split-layout {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 48px 32px 40px;
+    }
+
+    .left-panel-content {
+        max-width: 100%;
+    }
+
+    .left-footer {
+        position: static;
+        margin-top: 36px;
+    }
+
+    .tagline {
+        margin-bottom: 32px;
+    }
+
+    .right-panel {
+        margin-left: 0;
+        width: 100%;
+        padding: 48px 32px 40px;
+    }
+
+    .results-header {
+        margin-bottom: 48px;
+    }
+
+    .rec-title {
+        font-size: 1.75rem;
+    }
+
+    .recommendation {
+        padding: 16px 0 60px;
+    }
+
+    .rec-explanation {
+        max-width: 100%;
+    }
+}

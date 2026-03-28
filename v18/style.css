@@ -1,0 +1,204 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  min-height: 100vh;
+  background: #faf9f7;
+}
+
+/* ── Header ── */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 48px;
+  background: #f7f6f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid #e0ddd8;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #2c2c2c;
+}
+
+.search-bar input {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  padding: 6px 16px;
+  width: 260px;
+  border: 1px solid #d4d0ca;
+  border-radius: 20px;
+  background: #fff;
+  color: #999;
+  cursor: not-allowed;
+  outline: none;
+}
+
+/* ── Triptych ── */
+
+.triptych {
+  display: flex;
+  min-height: calc(100vh - 48px);
+  margin-top: 48px;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: flex 0.5s ease, background-color 0.5s ease;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+}
+
+.panel-content {
+  text-align: center;
+  padding: 40px 32px;
+  max-width: 420px;
+}
+
+.category {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+  opacity: 0.6;
+  transition: opacity 0.4s ease, color 0.5s ease;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  transition: color 0.5s ease;
+}
+
+.artist {
+  font-size: 15px;
+  font-style: italic;
+  margin-bottom: 24px;
+  opacity: 0.7;
+  transition: color 0.5s ease, opacity 0.4s ease;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s, color 0.5s ease;
+}
+
+/* ── Default panel colours ── */
+
+.panel-music  { background: #f0ece6; color: #3a3a3a; }
+.panel-dining { background: #e8e4de; color: #3a3a3a; }
+.panel-cinema { background: #e0dcd6; color: #3a3a3a; }
+
+/* ── Hover / Focus states ── */
+
+.panel:hover,
+.panel:focus-within {
+  flex: 2;
+}
+
+.panel-music:hover,
+.panel-music:focus-within {
+  background: #2c2c2c;
+  color: #ffffff;
+}
+
+.panel-dining:hover,
+.panel-dining:focus-within {
+  background: #3d2424;
+  color: #f5f0e8;
+}
+
+.panel-cinema:hover,
+.panel-cinema:focus-within {
+  background: #1a2a3a;
+  color: #f5f0e8;
+}
+
+.panel:hover .category,
+.panel:focus-within .category {
+  opacity: 0.5;
+  color: inherit;
+}
+
+.panel:hover .title,
+.panel:focus-within .title {
+  color: inherit;
+}
+
+.panel:hover .artist,
+.panel:focus-within .artist {
+  color: inherit;
+  opacity: 0.6;
+}
+
+.panel:hover .description,
+.panel:focus-within .description {
+  opacity: 1;
+  transform: translateY(0);
+  color: inherit;
+}
+
+/* ── Responsive: stack vertically under 768px ── */
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+
+  .triptych {
+    flex-direction: column;
+    margin-top: 0;
+    min-height: auto;
+  }
+
+  .panel {
+    flex: none;
+    min-height: 33vh;
+    padding: 48px 24px;
+  }
+
+  .panel-music  { background: #2c2c2c; color: #ffffff; }
+  .panel-dining { background: #3d2424; color: #f5f0e8; }
+  .panel-cinema { background: #1a2a3a; color: #f5f0e8; }
+
+  .description {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .category {
+    opacity: 0.5;
+  }
+
+  .artist {
+    opacity: 0.6;
+  }
+
+  .search-bar input {
+    width: 180px;
+    font-size: 12px;
+  }
+}

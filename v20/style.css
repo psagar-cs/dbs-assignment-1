@@ -1,0 +1,211 @@
+/* ── Reset & Base ── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #2a2a2a;
+    background: #faf7f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem 5rem;
+    transition: background 0.4s ease;
+}
+
+/* ── Header ── */
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #2a2a2a;
+}
+
+/* ── Hidden Radio Inputs ── */
+input[name="tab"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ── Tabs ── */
+.tabs {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.tabs label {
+    padding: 0.6rem 1.6rem;
+    border-radius: 999px;
+    border: 1.5px solid #2a2a2a;
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+    color: #2a2a2a;
+    background: transparent;
+    user-select: none;
+}
+
+.tabs label:hover {
+    background: rgba(26, 26, 26, 0.07);
+}
+
+/* Active tab styling */
+#tab-music:checked ~ .tabs label[for="tab-music"],
+#tab-dining:checked ~ .tabs label[for="tab-dining"],
+#tab-cinema:checked ~ .tabs label[for="tab-cinema"] {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+/* ── Panels Container ── */
+.panels {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    min-height: 340px;
+}
+
+/* ── Individual Panel ── */
+.panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+}
+
+.panel .category {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.panel .title {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+}
+
+.panel .attribution {
+    font-size: 1rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1.75rem;
+}
+
+.panel .explanation {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Panel background colors */
+.panel-music  { background: #faf7f2; }
+.panel-dining { background: #f2f5f0; }
+.panel-cinema { background: #f5f0f2; }
+
+/* ── Active Panels ── */
+#tab-music:checked ~ .panels .panel-music,
+#tab-dining:checked ~ .panels .panel-dining,
+#tab-cinema:checked ~ .panels .panel-cinema {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Background color shift */
+#tab-music:checked ~ .panels  { background: transparent; }
+#tab-dining:checked ~ .panels { background: transparent; }
+#tab-cinema:checked ~ .panels { background: transparent; }
+
+body:has(#tab-music:checked)  { background: #faf7f2; }
+body:has(#tab-dining:checked) { background: #f2f5f0; }
+body:has(#tab-cinema:checked) { background: #f5f0f2; }
+
+/* ── Bottom Bar ── */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.bottom-bar p {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.04em;
+}
+
+.bottom-bar strong {
+    color: #666;
+    font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    body {
+        padding: 2rem 1rem 5rem;
+    }
+
+    .panel .title {
+        font-size: 2.2rem;
+    }
+
+    .panel .explanation {
+        font-size: 0.95rem;
+    }
+
+    .tabs label {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .panels {
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 380px) {
+    .panel .title {
+        font-size: 1.8rem;
+    }
+
+    .tabs {
+        gap: 0.5rem;
+    }
+
+    .tabs label {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.75rem;
+    }
+}

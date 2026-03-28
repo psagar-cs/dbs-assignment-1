@@ -1,0 +1,272 @@
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll Container */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Section Base */
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem;
+}
+
+.content {
+    max-width: 600px;
+    text-align: center;
+}
+
+/* ---- Section 1: Hero ---- */
+.section-hero {
+    background-color: #1a1a1a;
+    color: #f5f0e8;
+}
+
+.brand {
+    font-size: 0.9rem;
+    letter-spacing: 0.35em;
+    text-transform: lowercase;
+    opacity: 0.5;
+    margin-bottom: 2.5rem;
+}
+
+.section-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scroll-indicator span {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    color: #f5f0e8;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 32px;
+    background: #f5f0e8;
+    opacity: 0.3;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.5; }
+}
+
+/* ---- Section 2: Search ---- */
+.section-search {
+    background-color: #f5f0e8;
+    color: #1a1a1a;
+}
+
+.section-search h2 {
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 2.5rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #fff;
+    border: 1px solid #d0c9be;
+    border-radius: 50px;
+    padding: 1rem 1.75rem;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+    opacity: 0.4;
+}
+
+.search-text {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    opacity: 0.7;
+}
+
+.search-caption {
+    font-size: 1.1rem;
+    opacity: 0.55;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ---- Section 3: Music ---- */
+.section-music {
+    background-color: #1a2233;
+    color: #f5f0e8;
+}
+
+/* ---- Section 4: Dining ---- */
+.section-dining {
+    background-color: #f5f0e8;
+    color: #1a1a1a;
+}
+
+/* ---- Section 5: Cinema ---- */
+.section-cinema {
+    background-color: #2a1a1a;
+    color: #f5f0e8;
+}
+
+/* ---- Section 6: Closing ---- */
+.section-closing {
+    background-color: #1a1a1a;
+    color: #f5f0e8;
+}
+
+/* Recommendation shared styles */
+.rec-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-bottom: 1.5rem;
+}
+
+.section-music h2,
+.section-dining h2,
+.section-cinema h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.rec-artist {
+    font-size: 1rem;
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.rec-description {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    opacity: 0.8;
+}
+
+/* ---- Closing section ---- */
+.section-closing h2 {
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 2.5rem;
+}
+
+.closing-logo {
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    text-transform: lowercase;
+    opacity: 0.4;
+    border-top: 1px solid rgba(245, 240, 232, 0.15);
+    padding-top: 2rem;
+    display: inline-block;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .section-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-search h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-music h2,
+    .section-dining h2,
+    .section-cinema h2 {
+        font-size: 2rem;
+    }
+
+    .section-closing h2 {
+        font-size: 1.8rem;
+    }
+
+    .rec-description {
+        font-size: 1rem;
+    }
+
+    .content {
+        max-width: 90%;
+    }
+
+    .search-bar {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-search h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-music h2,
+    .section-dining h2,
+    .section-cinema h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-closing h2 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle,
+    .rec-description,
+    .search-caption {
+        font-size: 0.95rem;
+    }
+}

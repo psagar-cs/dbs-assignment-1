@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tastewise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <header>
+      <p class="brand">Tastewise</p>
+      <h1>What you love says more about you than you think.</h1>
+      <p class="intro">
+        Every book you return to, every album that reshapes your commute, every meal that lingers in memory &mdash; they share a hidden thread. Tastewise follows that thread across domains, connecting the things you love to the things you haven't discovered yet.
+      </p>
+    </header>
+
+    <section class="search-section">
+      <div class="search-wrapper">
+        <input type="text" class="search-bar" value="Haruki Murakami" disabled>
+        <span class="search-hint">Try a book, song, film, or restaurant</span>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="results-intro">
+      <p>If you love <strong>Haruki Murakami</strong>, we think you'd also love&hellip;</p>
+    </section>
+
+    <section class="accordion">
+
+      <!-- Card 1: Music -->
+      <div class="accordion-item">
+        <input type="checkbox" id="card-1" class="accordion-toggle" hidden>
+        <label for="card-1" class="accordion-label">
+          <span class="accordion-category">Music</span>
+          <span class="accordion-title">"Kind of Blue" by Miles Davis</span>
+          <span class="accordion-indicator"></span>
+        </label>
+        <div class="panel">
+          <p>Murakami's prose moves like modal jazz &mdash; unhurried, atmospheric, full of space. Miles Davis understood that what you leave out matters as much as what you play.</p>
+          <p class="panel-meta">Album &middot; 1959 &middot; Columbia Records</p>
+        </div>
+        <hr>
+      </div>
+
+      <!-- Card 2: Dining -->
+      <div class="accordion-item">
+        <input type="checkbox" id="card-2" class="accordion-toggle" hidden>
+        <label for="card-2" class="accordion-label">
+          <span class="accordion-category">Dining</span>
+          <span class="accordion-title">"Ichiran Ramen" in Hakata, Japan</span>
+          <span class="accordion-indicator"></span>
+        </label>
+        <div class="panel">
+          <p>The solo dining booths and ritual simplicity mirror the solitary, contemplative worlds Murakami builds. Every bowl is a scene in one of his novels.</p>
+          <p class="panel-meta">Restaurant &middot; Hakata, Fukuoka, Japan</p>
+        </div>
+        <hr>
+      </div>
+
+      <!-- Card 3: Cinema -->
+      <div class="accordion-item">
+        <input type="checkbox" id="card-3" class="accordion-toggle" hidden>
+        <label for="card-3" class="accordion-label">
+          <span class="accordion-category">Cinema</span>
+          <span class="accordion-title">"In the Mood for Love" by Wong Kar-wai</span>
+          <span class="accordion-indicator"></span>
+        </label>
+        <div class="panel">
+          <p>Longing, restraint, and rain-soaked streets. Wong Kar-wai films the same emotional register Murakami writes &mdash; things felt but never quite said.</p>
+          <p class="panel-meta">Film &middot; 2000 &middot; Hong Kong</p>
+        </div>
+        <hr>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>Tastewise finds connections between the things you love.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
