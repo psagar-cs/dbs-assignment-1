@@ -138,6 +138,28 @@
       margin-bottom: 8px;
     }
 
+    .final-version {
+      margin-top: 48px;
+    }
+
+    .final-version .version-link {
+      background: var(--color-text);
+      color: var(--color-bg);
+      border-color: var(--color-text);
+    }
+
+    .final-version .version-link:hover {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .final-version .version-tag {
+      color: rgba(245, 245, 244, 0.5);
+    }
+
+    .final-version .version-desc {
+      color: rgba(245, 245, 244, 0.6);
+    }
+
     footer {
       margin-top: 64px;
       color: var(--color-muted);
@@ -390,6 +412,16 @@
       <span class="reflection-label">Designer's note</span>
       After four typography experiments, v19 remains the strongest version. The process was clarifying: sans-serif and monospace fonts felt too cold and minimal for what Tastewise is — an app about human taste and personal connection. The heavier serifs explored in v21 and v23 swung too far the other way, feeling imposing rather than inviting. v19's original serif choices sit in the right place — warm and considered, but never overbearing.
     </blockquote>
+
+    <div class="final-version">
+      <a href="v25/index.html" class="version-link">
+        <div class="version-header">
+          <span class="version-name">Version 25</span>
+          <span class="version-tag">Final Version</span>
+        </div>
+        <p class="version-desc">The deliberate conclusion. v19's scroll-snap narrative with refined copy — tighter headline, clearer search prompt, and a tagline that earns its place. Georgia serif. Warm and considered.</p>
+      </a>
+    </div>
 
     <footer>
       <p>MPCS 51238 — Design, Build, Ship</p>
